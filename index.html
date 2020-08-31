@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+    <head>
+        <meta charset="UTF-8">
+        <title>I am Sean</title>
+        <link rel="stylesheet" type="text/css" href="./sheets/i-am-sean-website.css">
+        <script src="./JS/i-am-sean-website.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    </head>
+
+<!-- Body -->
+<body class="Background">
+<a id="top"></a>
+<!-- Fade -->
+<script>
+    document.body.className += ' fade-out';
+    $(function() {
+        $('body').removeClass('fade-out');
+    });
+</script>
+
+<!-- Navbar -->
+    <div class="Navbar">
+        <a class="active" href="#Home">Home</a>
+        <a href="#Slideshow">Slideshow</a>
+        <a href="#About">About</a>
+        <a href="#GitHub">Github</a>
+        <a onclick="openForm()">Contact</a>
+    </div>
+
+<!-- Close form when click outside of it -->
+    <div class="btn cancel" onclick="closeForm()">
+
+      <!-- Home -->
+      <div id="Home">
+        <br>
+        <br>
+
+        <!-- Video -->
+        <video autoplay muted loop id="Typing_Video">
+          <source src="./videos/vb1.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <!-- Video text -->
+      <div class="Video_Text">
+        <h1 style="color: limegreen; font-style: italic;">Dreams of a Nerd</h1>
+        <p>
+          <strong>
+            <center>
+              <q>
+                A game is an opportunity to focus our energy, with relentless optimism, at something we’re good at (or getting better at) and enjoy.
+                <br>In other words, gameplay is the direct emotional opposite of depression.
+              </q>
+              <br>― Jane McGonigal, Reality is Broken: Why Games Make Us Better and How They Can Change the World<br>
+              <br>
+        <p class="intro">
+          Greetings!!!<br>
+          I am Sean.<br>
+          Don't be afraid.<br>
+          What you will see is a glimpse of creativity from my mind.<br>
+          Stay awhile and enjoy.
+        </p>
+        <br>Thanks for stopping by!
+        </center>
+        </strong>
+        </p>
+      </div>
+
+      <!-- Slideshow -->
+      <div id="Slideshow">
+        <div id="Slideshow_Background">
+          <div id="Slideshow_Container">
+
+            <div class="mySlides fade">
+              <div class="Slide_Number">1 / 6</div>
+              <img class="Slide_Show_Images" src="./images/digibkgrd.gif" style="width: 100%;">
+              <div class="text">I wanna make your games!!!</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="Slide_Number">2 / 6</div>
+              <img class="Slide_Show_Images" src="./images/htmlcssjsimg.png" style="width: 100%;">
+              <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="Slide_Number">3 / 6</div>
+              <img class="Slide_Show_Images" src="./images/PY-DJ.png" style="width: 100%;">
+              <div class="text">the popular programming language Python and the framwork - Django,</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="Slide_Number">4 / 6</div>
+              <img class="Slide_Show_Images" src="./images/msimg.png" style="width: 100%;">
+              <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="Slide_Number">5 / 6</div>
+              <img class="Slide_Show_Images" src="./images/sqlimg.png" style="width: 100%;">
+              <div class="text">back end development, databases and SQL.</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="Slide_Number">6 / 6</div>
+              <img class="Slide_Show_Images" src="./images/interwebs.gif" style="width: 100%;">
+              <div class="text">
+                <a onclick="openForm()" href="#Contact" style="color: white;">Contact me now!</a>
+              </div>
+            </div>
+
+            <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+
+          </div>
+          <br>
+
+          <div style="text-align:center">
+
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- JS functions for Slideshow -->
+      <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) { slideIndex = 1 }
+          if (n < 1) { slideIndex = slides.length }
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex - 1].style.display = "block";
+          dots[slideIndex - 1].className += " active";
+        }
+      </script>
+
+      <!-- About section -->
+      <div class="Row" id="About">
+        <div class="Column_2">
+          <img class="imgfix" src="./images/grngame.gif" alt="gamescreen">
+        </div>
+
+        <div class="Column_1">
+          <h1>About</h1>
+          <p class="intro">
+            I am a nerd that likes anything nerdy. After a lifetime of immersing myself in the culture and floundering in a career that I despise, I thought it was time to make the shift and go from nerd consumer to nerd creator.<br>
+            I am currently attending The Tech Academy, going through their Software Development course.<br>
+          </p>
+        </div>
+      </div>
+
+      <!-- GitHub -->
+      <div class="Row" id="GitHub">
+        <div class="Column_1">
+          <h1>GitHub</h1>
+          <p class="intro">
+            My repository will contain all of my current and future projects.<br>
+            </br>Found below:
+            <center><a href="https://github.com/Thalious/HTML-and-CSS-Projects.git" target="_blank">Code Bank</a></center>
+          </p>
+        </div>
+
+        <div class="Column_2">
+          <img class="imgfix" src="./images/githubicon.png" alt="GitHub">
+        </div>
+      </div>
+
+      <!-- SF Project --->
+      <div class="Row" id="GitHub">
+        <div class="Column_2">
+          <img class="imgfix" src="./images/StarfinderSocietyBadge.png" alt="SFBadge">
+        </div>
+
+        <div class="Column_1">
+          <h1>Starfinder Project</h1>
+          <p class="intro">
+            Here is a very early build of a long-term project to make a character creator for one of my favorite games using Python and the Django Framework.<br />
+            <br />
+              <iframe width="400" height="250" src="https://www.youtube.com/embed/yaRwT_-sUng" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- C Sharp Bug Fix -->
+    <div class="Row" id="CSharp">
+      <div class="Column_1">
+        <h1>Simple Bug Fix - Using C# MVC in Visual Studio</h1>
+        <p class="intro">
+          During a production sprint, I was assigned the story of fixing a bug were, when a photo was deleted, and uncaught error would occur preventing the deletion of the photo.</br>
+          Since I love photo editing, I made a gif to the right of the process but I have also included screen shots below.
+        </p>
+        <div class="imgcontainer">
+          <div class="imgrow">
+            <div class="imgcolumn">
+              <img id="imgpopup" src="./images/errorbig.jpg" alt="Displayed Error">
+            </div>
+          </div>
+          <div class="imgrow">
+            <div class="imgcolumn">
+              <img id="imgpopup" src="./images/fixthumb.jpg" alt="fixthumb">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="Column_2">
+        <img class="imgfix" src="./images/CsharpBugFix.gif" alt="CsharpBugFix">
+      </div>
+    </div>
+
+    <!-- Image Popup -->
+    <div id="imgmodal" class="modal">
+      <span class="close"><img src="./images/closeX.gif" alt="close"></span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
+
+    <script>
+      // img modal
+      var modal = document.getElementById("imgmodal");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("imgpopup");
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+    </script>
+
+      <!-- Contact section -->
+          <div id="Contact">
+              <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
+                  <div class="form-popup" id="myForm">
+                      <form action="https://formspree.io/mpzjaojg" method="POST" class="form-container">
+                      <h1>Contact</h1>
+                          <label for="name"><br>Name</b></label>
+                              <input type="text" placeholder="Type your name here" name="name" required>
+                          <label for="phone"><b>Phone</b></label>
+                              <input type="text" placeholder="Enter your phone number here" name="phone">
+                          <label for="email"><b>Email</b></label>
+                              <input type="text" placeholder="Type your email address here" name="email" required>
+                          <label for="message"><b>Message</b></label>
+                              <input type="text" placeholder="Type your message here" name="message">
+
+                  <button type="submit" class="btn">SUBMIT</button>
+                  <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                      </form>
+                  </div>
+          </div>
+
+      <!-- Footer section -->
+          <footer>
+              <a href="#top" id="toplink"><img src="./images/totop.gif"></a>
+
+              <p class="intro">
+                  <center class="intro">Educated through<br>
+                      &copy Prosper Consulting Inc., <a href="https://learncodinganywhere.com/">The Tech Academy</a><br>
+                  </center><br>
+              </p> 
+          </footer>
+      </body>
+      </html>
