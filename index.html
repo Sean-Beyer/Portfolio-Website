@@ -27,7 +27,6 @@
         <a href="#Slideshow">Slideshow</a>
         <a href="#About">About</a>
         <a href="#GitHub">Github</a>
-        <a onclick="openForm()">Contact</a>
     </div>
 
 <!-- Close form when click outside of it -->
@@ -109,7 +108,7 @@
               <div class="Slide_Number">6 / 6</div>
               <img class="Slide_Show_Images" src="./images/interwebs.gif" style="width: 100%;">
               <div class="text">
-                <a onclick="openForm()" href="#Contact" style="color: white;">Contact me now!</a>
+                <a href="https://docs.google.com/document/d/1tUNw3lCay-h_qylXCFSRAP9euD1WhFY5nVXqP4FBYoQ/edit?usp=sharing" style="color: white;">Contact me now!</a>
               </div>
             </div>
 
@@ -168,9 +167,23 @@
         <div class="Column_1">
           <h1>About</h1>
           <p class="intro">
-            I am a nerd that likes anything nerdy. After a lifetime of immersing myself in the culture and floundering in a career that I despise, I thought it was time to make the shift and go from nerd consumer to nerd creator.<br>
-            I am currently attending The Tech Academy, going through their Software Development course.<br>
+            I am a nerd that likes anything nerdy. After a lifetime of immersing myself in the culture and floundering in a career, I thought it was time to make the shift and go from nerd consumer to nerd creator.<br>
+            I have recently completed The Tech Academy's Software Development course and really excited to start my career as a Full-Stack Developer.<br>
           </p>
+          <div class="imgrow">
+            <div class="imgcolumn">
+              <a href="https://www.linkedin.com/in/sean-beyer-thalious/" target="_blank">
+                <img class="imgfix" src="./images/ldibtn.png" alt="LinkedIn Button">
+              </a>
+            </div>
+            <div class="imgrow">
+              <div class="imgcolumn">
+                <a href="https://docs.google.com/document/d/1tUNw3lCay-h_qylXCFSRAP9euD1WhFY5nVXqP4FBYoQ/edit?usp=sharing" target="_blank">
+                  <img class="imgfix" src="./images/resbtn.png" alt="Resume Button">
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -181,7 +194,11 @@
           <p class="intro">
             My repository will contain all of my current and future projects.<br>
             </br>Found below:
-            <center><a href="https://github.com/Thalious/HTML-and-CSS-Projects.git" target="_blank">Code Bank</a></center>
+            <center>
+              <a href="https://github.com/Sean-Beyer" target="_blank">
+                <img class="imgfix" src="./images/gitbtn.png" alt="Git Button">
+              </a>
+            </center>
           </p>
         </div>
 
@@ -193,7 +210,7 @@
       <!-- SF Project --->
       <div class="Row" id="GitHub">
         <div class="Column_2">
-          <img class="imgfix" src="./images/StarfinderSocietyBadge.png" alt="SFBadge">
+          <img class="imgfix" src="./images/StarfinderSocietyBadge.png" alt="GitHub">
         </div>
 
         <div class="Column_1">
@@ -207,93 +224,36 @@
       </div>
     </div>
 
-    <!-- C Sharp Bug Fix -->
-    <div class="Row" id="CSharp">
-      <div class="Column_1">
-        <h1>Simple Bug Fix - Using C# MVC in Visual Studio</h1>
+<!-- Contact section -->
+    <div id="Contact">
+        <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/mpzjaojg" method="POST" class="form-container">
+                <h1>Contact</h1>
+                    <label for="name"><br>Name</b></label>
+                        <input type="text" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Enter your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Type your email address here" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                        <input type="text" placeholder="Type your message here" name="message">
+
+            <button type="submit" class="btn">SUBMIT</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                </form>
+            </div>
+    </div>
+
+<!-- Footer section -->
+    <footer>
+        <a href="#top" id="toplink"><img src="./images/totop.gif"></a>
+
         <p class="intro">
-          During a production sprint, I was assigned the story of fixing a bug were, when a photo was deleted, and uncaught error would occur preventing the deletion of the photo.</br>
-          Since I love photo editing, I made a gif to the right of the process but I have also included screen shots below.
-        </p>
-        <div class="imgcontainer">
-          <div class="imgrow">
-            <div class="imgcolumn">
-              <img id="imgpopup" src="./images/errorbig.jpg" alt="Displayed Error">
-            </div>
-          </div>
-          <div class="imgrow">
-            <div class="imgcolumn">
-              <img id="imgpopup" src="./images/fixthumb.jpg" alt="fixthumb">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="Column_2">
-        <img class="imgfix" src="./images/CsharpBugFix.gif" alt="CsharpBugFix">
-      </div>
-    </div>
-
-    <!-- Image Popup -->
-    <div id="imgmodal" class="modal">
-      <span class="close"><img src="./images/closeX.gif" alt="close"></span>
-      <img class="modal-content" id="img01">
-      <div id="caption"></div>
-    </div>
-
-    <script>
-      // img modal
-      var modal = document.getElementById("imgmodal");
-
-      // Get the image and insert it inside the modal - use its "alt" text as a caption
-      var img = document.getElementById("imgpopup");
-      var modalImg = document.getElementById("img01");
-      var captionText = document.getElementById("caption");
-      img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-      }
-
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-    </script>
-
-      <!-- Contact section -->
-          <div id="Contact">
-              <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
-                  <div class="form-popup" id="myForm">
-                      <form action="https://formspree.io/mpzjaojg" method="POST" class="form-container">
-                      <h1>Contact</h1>
-                          <label for="name"><br>Name</b></label>
-                              <input type="text" placeholder="Type your name here" name="name" required>
-                          <label for="phone"><b>Phone</b></label>
-                              <input type="text" placeholder="Enter your phone number here" name="phone">
-                          <label for="email"><b>Email</b></label>
-                              <input type="text" placeholder="Type your email address here" name="email" required>
-                          <label for="message"><b>Message</b></label>
-                              <input type="text" placeholder="Type your message here" name="message">
-
-                  <button type="submit" class="btn">SUBMIT</button>
-                  <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
-                      </form>
-                  </div>
-          </div>
-
-      <!-- Footer section -->
-          <footer>
-              <a href="#top" id="toplink"><img src="./images/totop.gif"></a>
-
-              <p class="intro">
-                  <center class="intro">Educated through<br>
-                      &copy Prosper Consulting Inc., <a href="https://learncodinganywhere.com/">The Tech Academy</a><br>
-                  </center><br>
-              </p> 
-          </footer>
-      </body>
-      </html>
+            <center class="intro">Educated through<br>
+                &copy Prosper Consulting Inc., <a href="https://learncodinganywhere.com/">The Tech Academy</a><br>
+            </center><br>
+         </p> 
+    </footer>
+</body>
+</html>

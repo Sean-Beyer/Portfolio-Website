@@ -2,15 +2,15 @@
 
 $(document).ready(function(){
     $("a").on('click', function(event) {
-        if (this.Link !== "") {
+        if (this.hash !== "") {
             event.preventDefault();
-            var Link = this.Link;
+            var hash = this.hash;
 
             $('html, body').animate({
-                scrollTop: $(Link).offset().top
+                scrollTop: $(hash).offset().top
             }, 2000, function(){
 
-                window.location.Link = Link; 
+                window.location.hash = hash; 
             });
         }
     });
@@ -24,4 +24,3 @@ function openForm() {
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
-
